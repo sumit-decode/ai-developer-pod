@@ -1,0 +1,26 @@
+# AI Orchestration & Agents
+crewai[tools]>=0.100.0
+langgraph>=0.2.0
+litellm>=1.0.0
+
+# API & Web Framework
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+
+# Database & ORM
+sqlalchemy
+alembic
+
+# Security & Authentication
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+
+# Testing
+pytest
+httpx
+
+# Utilities
+python-dotenv

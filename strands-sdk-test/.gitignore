@@ -1,0 +1,14 @@
+# Credentials
+.env
+
+# Environments
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local Design/Server artifacts (Optional: only if you want a clean repo)
+# design/
+# server/
+# tests/
