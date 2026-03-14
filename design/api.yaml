@@ -1,0 +1,74 @@
+openapi: 3.0.2
+info:
+  title: Blog API
+  description: API for managing blog posts
+  version: 1.0.0
+servers:
+  - url: https://example.com/api
+paths:
+  /posts:
+    get:
+      summary: Get all posts
+      responses:
+        '200':
+          description: List of posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+    post:
+      summary: Create a new post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewPost'
+      responses:
+        '201':
+          description: New post created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Post ID
+        title:
+          type: string
+          description: Post title
+        content:
+          type: string
+          description: Post content
+        author:
+          $ref: '#/components/schemas/User'
+    NewPost:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Post title
+        content:
+          type: string
+          description: Post content
+        author:
+          $ref: '#/components/schemas/User'
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: User ID
+        name:
+          type: string
+          description: User name
+        role:
+          type: string
+          description: User role
